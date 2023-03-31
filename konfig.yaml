@@ -1,0 +1,12 @@
+outputDirectory: /tmp/openai-sdks-out
+specInputPath: openapi.yaml
+specPath: openapi-fixed.yaml
+generators:
+  typescript:
+    version: 1.0.0
+    npmName: openai-typescript-sdk
+    outputDirectory: typescript
+    clientName: Openai
+    git:
+      userId: konfig-dev
+      repoId: openai-sdks/tree/main/typescript
