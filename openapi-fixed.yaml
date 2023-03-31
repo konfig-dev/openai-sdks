@@ -3892,6 +3892,13 @@ components:
         - message
     DownloadResponse:
       type: string
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      name: Authorization
+      in: header
+security:
+  - apiKey: []
 x-oaiMeta:
   groups:
     - title: Models
