@@ -2149,7 +2149,12 @@ components:
               minItems: 1
               items:
                 type: integer
-              example: '[1212, 318, 257, 1332, 13]'
+              example:
+                - 1212
+                - 318
+                - 257
+                - 1332
+                - 13
             - type: array
               minItems: 1
               items:
@@ -2157,7 +2162,12 @@ components:
                 minItems: 1
                 items:
                   type: integer
-              example: '[[1212, 318, 257, 1332, 13]]'
+              example:
+                - - 1212
+                  - 318
+                  - 257
+                  - 1332
+                  - 13
         suffix:
           description: The suffix that comes after a completion of inserted text.
           default: null
@@ -2528,7 +2538,7 @@ components:
             The maximum number of tokens allowed for the generated answer. By
             default, the number of tokens the model can return will be (4096 -
             prompt tokens).
-          default: inf
+          default: 99999999
           type: integer
         presence_penalty:
           description: >
@@ -2966,7 +2976,10 @@ components:
           items:
             type: string
           nullable: true
-          example: '[''White House'', ''hospital'', ''school'']'
+          example:
+            - White House
+            - hospital
+            - school
         file:
           description: |
             The ID of an uploaded file that contains documents to search over.
@@ -3097,9 +3110,11 @@ components:
             items:
               type: string
               minLength: 1
-          example: >-
-            [['What is the capital of Canada?', 'Ottawa'], ['Which province is
-            Ottawa in?', 'Ontario']]
+          example:
+            - - What is the capital of Canada?
+              - Ottawa
+            - - Which province is Ottawa in?
+              - Ontario
         examples_context:
           description: >-
             A text snippet containing the contextual information used to
@@ -3120,10 +3135,11 @@ components:
           maxItems: 200
           items:
             type: string
-          example: >-
-            ['Japan is an island country in East Asia, located in the northwest
-            Pacific Ocean.', 'Tokyo is the capital and most populous prefecture
-            of Japan.']
+          example:
+            - >-
+              Japan is an island country in East Asia, located in the northwest
+              Pacific Ocean.
+            - Tokyo is the capital and most populous prefecture of Japan.
           nullable: true
         file:
           description: >
@@ -3292,9 +3308,11 @@ components:
             items:
               type: string
               minLength: 1
-          example: >-
-            [['Do not see this film.', 'Negative'], ['Smart, provocative and
-            blisteringly funny.', 'Positive']]
+          example:
+            - - Do not see this film.
+              - Negative
+            - - Smart, provocative and blisteringly funny.
+              - Positive
           nullable: true
         file:
           description: >
@@ -3613,7 +3631,12 @@ components:
               minItems: 1
               items:
                 type: integer
-              example: '[1212, 318, 257, 1332, 13]'
+              example:
+                - 1212
+                - 318
+                - 257
+                - 1332
+                - 13
             - type: array
               minItems: 1
               items:
@@ -3621,7 +3644,12 @@ components:
                 minItems: 1
                 items:
                   type: integer
-              example: '[[1212, 318, 257, 1332, 13]]'
+              example:
+                - - 1212
+                  - 318
+                  - 257
+                  - 1332
+                  - 13
         user: *ref_0
       required:
         - model

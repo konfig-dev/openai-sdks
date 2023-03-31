@@ -2,6 +2,16 @@ outputDirectory: /tmp/openai-sdks-out
 specInputPath: openapi.yaml
 specPath: openapi-fixed.yaml
 fixConfig:
+  modify:
+    $.components.schemas.CreateCompletionRequest.properties.prompt.oneOf[2].example: [1212, 318, 257, 1332, 13]
+    $.components.schemas.CreateCompletionRequest.properties.prompt.oneOf[3].example: [[1212, 318, 257, 1332, 13]]
+    $.components.schemas.CreateChatCompletionRequest.properties.max_tokens.default: 99999999
+    $.components.schemas.CreateAnswerRequest.properties.examples.example: [['What is the capital of Canada?', 'Ottawa'], ['Which province is Ottawa in?', 'Ontario']]
+    $.components.schemas.CreateSearchRequest.properties.documents.example: ['White House', 'hospital', 'school']
+    $.components.schemas.CreateAnswerRequest.properties.documents.example: ['Japan is an island country in East Asia, located in the northwest Pacific Ocean.', 'Tokyo is the capital and most populous prefecture of Japan.']
+    $.components.schemas.CreateClassificationRequest.properties.examples.example: [['Do not see this film.', 'Negative'], ['Smart, provocative and blisteringly funny.', 'Positive']] 
+    $.components.schemas.CreateEmbeddingRequest.properties.input.oneOf[2].example: [1212, 318, 257, 1332, 13]
+    $.components.schemas.CreateEmbeddingRequest.properties.input.oneOf[3].example: [[1212, 318, 257, 1332, 13]]
   update:
     $.components:
       securitySchemes:
