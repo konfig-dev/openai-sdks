@@ -1,0 +1,3 @@
+[submodule "examples/chatbot-ui"]
+	path = examples/chatbot-ui
+	url = https://github.com/konfig-dev/chatbot-ui
