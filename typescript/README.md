@@ -1,4 +1,4 @@
-## openai-typescript-sdk@1.0.0
+## openai-typescript-sdk@1.1.0
 
 This library that utilizes [axios](https://github.com/axios/axios). The generated Node module can be used in the following environments:
 
@@ -28,7 +28,7 @@ npm run build
 navigate to the folder of your consuming project and run the following command.
 
 ```
-npm install openai-typescript-sdk@1.0.0 --save
+npm install openai-typescript-sdk@1.1.0 --save
 ```
 
 ### Getting Started
@@ -39,6 +39,8 @@ import { Openai } from "openai-typescript-sdk"
 const openai = new Openai({
     // Defining the base path is optional and defaults to https://api.openai.com/v1
     // basePath: "https://api.openai.com/v1",
+    // Use native Fetch API instead of axios
+    // useFetch: true,
     apiKey: 'API_KEY',
 
 })
@@ -99,4 +101,24 @@ Class | Method | HTTP request | Description
 *ModelsApi* | [**retrieve**](docs/ModelsApi.md#retrieve) | **GET** /models/{model} | Retrieves a model instance, providing basic information about the model such as the owner and permissioning.
 *ModerationsApi* | [**create**](docs/ModerationsApi.md#create) | **POST** /moderations | Classifies if text violates OpenAI\&#39;s Content Policy
 
+
+
+## Using Next.js Edge Runtime
+
+If you are using `openai-typescript-sdk` in Next.js runtime make sure to set `useFetch: true` like so:
+
+```typescript
+import { Openai } from "openai-typescript-sdk"
+
+export const config = {
+    runtime: "edge",
+};
+
+export default async function handler(req: Request): Promise<Response> {
+    const openai = new Openai({
+        useFetch: true, // useFetch must be "true" for Openai to work in Next.js edge runtime
+    })
+    return new Response(JSON.stringify({ message: "This is from openai-typescript-sdk" }), { status: 200 })
+}
+```
 

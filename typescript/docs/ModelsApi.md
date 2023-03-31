@@ -23,6 +23,8 @@ import { Openai } from "openai-typescript-sdk"
 const openai = new Openai({
     // Defining the base path is optional and defaults to https://api.openai.com/v1
     // basePath: "https://api.openai.com/v1",
+    // Use native Fetch API instead of axios
+    // useFetch: true,
     apiKey: 'API_KEY',
 
 })
@@ -74,6 +76,8 @@ import { Openai } from "openai-typescript-sdk"
 const openai = new Openai({
     // Defining the base path is optional and defaults to https://api.openai.com/v1
     // basePath: "https://api.openai.com/v1",
+    // Use native Fetch API instead of axios
+    // useFetch: true,
     apiKey: 'API_KEY',
 
 })
@@ -120,6 +124,8 @@ import { Openai } from "openai-typescript-sdk"
 const openai = new Openai({
     // Defining the base path is optional and defaults to https://api.openai.com/v1
     // basePath: "https://api.openai.com/v1",
+    // Use native Fetch API instead of axios
+    // useFetch: true,
     apiKey: 'API_KEY',
 
 })

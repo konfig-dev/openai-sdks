@@ -12,6 +12,7 @@
  * Do not edit the class manually.
  */
 
+import fetchAdapter from "@vespaiach/axios-fetch-adapter"
 
 type ApiKey =
   | string
@@ -26,6 +27,7 @@ export interface ConfigurationParameters {
     accessToken?: string | Promise<string> | ((name?: string, scopes?: string[]) => string) | ((name?: string, scopes?: string[]) => Promise<string>);
     basePath?: string;
     baseOptions?: any;
+    useFetch?: boolean;
     userAgent?: string;
     formDataCtor?: new () => any;
 }
@@ -95,7 +97,10 @@ export class Configuration {
         this.accessToken = param.accessToken;
         this.basePath = param.basePath;
         this.baseOptions = param.baseOptions ?? {};
-        this.userAgent = param.userAgent === undefined ? "Konfig/1.0.0/typescript" : param.userAgent;
+        if (param.useFetch) {
+            this.baseOptions["adapter"] = fetchAdapter
+        }
+        this.userAgent = param.userAgent === undefined ? "Konfig/1.1.0/typescript" : param.userAgent;
         this.formDataCtor = param.formDataCtor;
     }
 
