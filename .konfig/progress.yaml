@@ -1,0 +1,96 @@
+examples: {}
+examples_2: {}
+fixOnlyOneTagName:
+  cancelFineTune: FineTunes
+  createAnswer: Answers
+  createChatCompletion: Chat
+  createClassification: Classifications
+  createCompletion: Completions
+  createEdit: Edits
+  createEmbedding: Embeddings
+  createFile: Files
+  createFineTune: FineTunes
+  createImage: Images
+  createImageEdit: Images
+  createImageVariation: Images
+  createModeration: Moderations
+  createSearch: Engines
+  createTranscription: Audio
+  createTranslation: Audio
+  deleteFile: Files
+  deleteModel: Models
+  downloadFile: Files
+  listEngines: Engines
+  listFiles: Files
+  listFineTuneEvents: FineTunes
+  listFineTunes: FineTunes
+  listModels: Models
+  retrieveEngine: Engines
+  retrieveFile: Files
+  retrieveFineTune: FineTunes
+  retrieveModel: Models
+operationIds:
+  /answers:
+    post: Answers_create
+  /audio/transcriptions:
+    post: Audio_createTranscription
+  /audio/translations:
+    post: Audio_createTranslation
+  /chat/completions:
+    post: Chat_createCompletion
+  /classifications:
+    post: Classifications_create
+  /completions:
+    post: Completions_create
+  /edits:
+    post: Edits_create
+  /embeddings:
+    post: Embeddings_create
+  /engines:
+    get: Engines_list
+  /engines/{engine_id}:
+    get: Engines_retrieve
+  /engines/{engine_id}/search:
+    post: Engines_createSearch
+  /files:
+    get: Files_list
+    post: Files_create
+  /files/{file_id}:
+    delete: Files_delete
+    get: Files_retrieve
+  /files/{file_id}/content:
+    get: Files_download
+  /fine-tunes:
+    get: FineTunes_list
+    post: FineTunes_create
+  /fine-tunes/{fine_tune_id}:
+    get: FineTunes_retrieve
+  /fine-tunes/{fine_tune_id}/cancel:
+    post: FineTunes_cancel
+  /fine-tunes/{fine_tune_id}/events:
+    get: FineTunes_listEvents
+  /images/edits:
+    post: Images_createEdit
+  /images/generations:
+    post: Images_create
+  /images/variations:
+    post: Images_createVariation
+  /models:
+    get: Models_list
+  /models/{model}:
+    delete: Models_delete
+    get: Models_retrieve
+  /moderations:
+    post: Moderations_create
+operationTags: {}
+renameTags: {}
+requestSchemaNames: {}
+responseDescriptions: {}
+responseSchemaNames:
+  /files/{file_id}/content:
+    get:
+      '200':
+        application/json: DownloadResponse
+securityParameters:
+  stream:
+    query: false

@@ -1,6 +1,15 @@
 outputDirectory: /tmp/openai-sdks-out
 specInputPath: openapi.yaml
 specPath: openapi-fixed.yaml
+fixConfig:
+  modify:
+    $.components.securitySchemes:
+      apiKey:
+        type: apiKey
+        name: Authorization
+        in: header
+    $.security:
+      - apiKey: []
 generators:
   typescript:
     version: 1.0.0
