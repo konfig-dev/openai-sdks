@@ -1,6 +1,7 @@
 outputDirectory: /tmp/openai-sdks-out
 specInputPath: openapi.yaml
 specPath: openapi-fixed.yaml
+validateSpec: false
 fixConfig:
   modify:
     $.components.schemas.CreateCompletionRequest.properties.prompt.oneOf[2].example: [1212, 318, 257, 1332, 13]
@@ -19,6 +20,7 @@ fixConfig:
           type: apiKey
           name: Authorization
           in: header
+          x-konfig-prefix: "Bearer "
     $.:
       security:
         - apiKey: []

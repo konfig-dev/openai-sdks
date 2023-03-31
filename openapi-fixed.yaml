@@ -3925,6 +3925,7 @@ components:
       type: apiKey
       name: Authorization
       in: header
+      x-konfig-prefix: 'Bearer '
 security:
   - apiKey: []
 x-oaiMeta:
