@@ -25,6 +25,9 @@ import { CreateChatCompletionRequest } from '../models';
 import { CreateChatCompletionResponse } from '../models';
 import { paginate } from "../pagination/paginate";
 import { requestBeforeHook } from '../requestBeforeHook';
+import fetchAdapter from 'konfig-axios-fetch-adapter';
+import { createStream } from '../stream';
+import { requestStreamParameterHook } from '../streamHook';
 /**
  * ChatApi - axios parameter creator
  * @export
@@ -97,6 +100,14 @@ export const ChatApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createCompletion(requestParameters, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
+
+        async createCompletionStream(requestParameters: ChatApiCreateCompletionRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ReadableStream>> {
+            requestStreamParameterHook({parameters: requestParameters})
+            options.responseType = "stream"
+            options.adapter = fetchAdapter
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createCompletion(requestParameters, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
     }
 };
 
@@ -116,6 +127,10 @@ export const ChatApiFactory = function (configuration?: Configuration, basePath?
          */
         createCompletion(requestParameters: ChatApiCreateCompletionRequest, options?: AxiosRequestConfig): AxiosPromise<CreateChatCompletionResponse> {
             return localVarFp.createCompletion(requestParameters, options).then((request) => request(axios, basePath));
+        },
+
+        createCompletionStream(requestParameters: ChatApiCreateCompletionRequest, options?: AxiosRequestConfig): AxiosPromise<ReadableStream> {
+            return localVarFp.createCompletionStream(requestParameters, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -146,5 +161,10 @@ export class ChatApi extends BaseAPI {
      */
     public createCompletion(requestParameters: ChatApiCreateCompletionRequest, options?: AxiosRequestConfig) {
         return ChatApiFp(this.configuration).createCompletion(requestParameters, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    public createCompletionStream(requestParameters: ChatApiCreateCompletionRequest, options?: AxiosRequestConfig) {
+        const request = ChatApiFp(this.configuration).createCompletionStream(requestParameters, options).then((request) => request(this.axios, this.basePath));
+        return request.then((response) => createStream({ response }));
     }
 }
