@@ -61,12 +61,13 @@ fixConfig:
         - apiKey: []
 generators:
   typescript:
-    version: 1.1.0
+    version: 1.0.0
     npmName: openai-typescript-edge-streaming-sdk
     outputDirectory: typescript
     clientName: Openai
     includeFetchAdapter: true
     includeEventSourceParser: true
+    readmeDescriptionSnippet: snippets/readmeDescription.md
     git:
       userId: konfig-dev
       repoId: openai-sdks/tree/main/typescript

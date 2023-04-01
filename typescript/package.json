@@ -1,6 +1,6 @@
 {
   "name": "openai-typescript-edge-streaming-sdk",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "description": "Client for OpenAI API",
   "author": "Konfig",
   "repository": {
