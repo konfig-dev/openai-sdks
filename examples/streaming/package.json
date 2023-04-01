@@ -2,12 +2,16 @@
   "name": "streaming",
   "version": "1.0.0",
   "description": "Streaming example with generated TypeScript SDK",
-  "main": "dist/index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "license": "MIT",
+  "scripts": {
+    "dev": "vite"
+  },
   "dependencies": {
-    "openai-typescript-sdk": "link:../../typescript"
+    "openai-typescript-sdk": "^1.1.0"
   },
   "devDependencies": {
-    "typescript": "^5.0.3"
+    "vite": "^4.2.1"
   }
 }
