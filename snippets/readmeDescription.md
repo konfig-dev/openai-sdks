@@ -9,7 +9,7 @@ environments. It improves upon the official library by:
    [streaming](https://platform.openai.com/docs/api-reference/chat/create#chat/create-stream)
    support for the `/chat/completions` endpoint with
    [`openai.chat.createCompletionStream` method](./api/chat-api-custom.ts) to help
-   you create a ChatGPT-style UX. See example usage
-   [here](../examples/chatbot-ui/utils/server/index.ts)
+   implement a ChatGPT UX. See example usage
+   [here](https://github.com/konfig-dev/chatbot-ui/blob/main/utils/server/index.ts#L15)
 
 Authored by: https://www.konfigthis.com/
