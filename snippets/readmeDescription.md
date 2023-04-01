@@ -5,7 +5,7 @@ API key), edge, and server environments. It improves upon the official library
 by:
 
 1. Reorganizing OpenAI's endpoints into namespaces
-2. Adding support for usage in [Next.js Edge Runtime](https://nextjs.org/docs/api-reference/edge-runtime) by passing [`useFetch: true`](#using-nextjs-edge-runtime)
+2. Adding support for usage in [Next.js Edge Runtime](https://nextjs.org/docs/api-reference/edge-runtime) by passing [`useFetch: true`](#usage-in-nextjs-edge-runtime)
 3. Adds
    [streaming](https://platform.openai.com/docs/api-reference/chat/create#chat/create-stream)
    support for the `/chat/completions` endpoint with

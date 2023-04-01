@@ -6,7 +6,7 @@ API key), edge, and server environments. It improves upon the official library
 by:
 
 1. Reorganizing OpenAI's endpoints into namespaces
-2. Adding support for usage in [Next.js Edge Runtime](https://nextjs.org/docs/api-reference/edge-runtime) by passing [`useFetch: true`](#using-nextjs-edge-runtime)
+2. Adding support for usage in [Next.js Edge Runtime](https://nextjs.org/docs/api-reference/edge-runtime) by passing [`useFetch: true`](#usage-in-nextjs-edge-runtime)
 3. Adds
    [streaming](https://platform.openai.com/docs/api-reference/chat/create#chat/create-stream)
    support for the `/chat/completions` endpoint with
@@ -18,14 +18,38 @@ Authored by: https://www.konfigthis.com/
 
 
 ### Installing
+
 #### npm
 ```
 npm install openai-typescript-edge-streaming-sdk --save
 ```
+
 #### yarn
 ```
 yarn add openai-typescript-edge-streaming-sdk
 ```
+
+
+
+## Usage in Next.js Edge Runtime
+
+If you are using `openai-typescript-edge-streaming-sdk` in a Next.js Edge runtime make sure to set `useFetch: true` like so:
+
+```typescript
+import { Openai } from "openai-typescript-edge-streaming-sdk"
+
+export const config = {
+    runtime: "edge",
+};
+
+export default async function handler(req: Request): Promise<Response> {
+    const openai = new Openai({
+        useFetch: true, // useFetch must be "true" for Openai to work in Next.js edge runtime
+    })
+    return new Response(JSON.stringify({ message: "This is from openai-typescript-edge-streaming-sdk" }), { status: 200 })
+}
+```
+
 
 ### Getting Started
 
@@ -96,25 +120,4 @@ Class | Method | HTTP request | Description
 *ModelsApi* | [**list**](docs/ModelsApi.md#list) | **GET** /models | Lists the currently available models, and provides basic information about each one such as the owner and availability.
 *ModelsApi* | [**retrieve**](docs/ModelsApi.md#retrieve) | **GET** /models/{model} | Retrieves a model instance, providing basic information about the model such as the owner and permissioning.
 *ModerationsApi* | [**create**](docs/ModerationsApi.md#create) | **POST** /moderations | Classifies if text violates OpenAI\&#39;s Content Policy
-
-
-
-## Using Next.js Edge Runtime
-
-If you are using `openai-typescript-edge-streaming-sdk` in a Next.js Edge runtime make sure to set `useFetch: true` like so:
-
-```typescript
-import { Openai } from "openai-typescript-edge-streaming-sdk"
-
-export const config = {
-    runtime: "edge",
-};
-
-export default async function handler(req: Request): Promise<Response> {
-    const openai = new Openai({
-        useFetch: true, // useFetch must be "true" for Openai to work in Next.js edge runtime
-    })
-    return new Response(JSON.stringify({ message: "This is from openai-typescript-edge-streaming-sdk" }), { status: 200 })
-}
-```
 
