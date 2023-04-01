@@ -23,10 +23,7 @@ import { Openai } from "openai-edge-streaming"
 const openai = new Openai({
     // Defining the base path is optional and defaults to https://api.openai.com/v1
     // basePath: "https://api.openai.com/v1",
-    // Use native Fetch API instead of axios
-    // useFetch: true,
-    apiKey: 'API_KEY',
-
+    apiKey: process.env.OPENAI_API_KEY,
 })
 
 const createResponse = await openai.images.create({
@@ -80,10 +77,7 @@ import { Openai } from "openai-edge-streaming"
 const openai = new Openai({
     // Defining the base path is optional and defaults to https://api.openai.com/v1
     // basePath: "https://api.openai.com/v1",
-    // Use native Fetch API instead of axios
-    // useFetch: true,
-    apiKey: 'API_KEY',
-
+    apiKey: process.env.OPENAI_API_KEY,
 })
 
 const createEditResponse = await openai.images.createEdit({
@@ -144,10 +138,7 @@ import { Openai } from "openai-edge-streaming"
 const openai = new Openai({
     // Defining the base path is optional and defaults to https://api.openai.com/v1
     // basePath: "https://api.openai.com/v1",
-    // Use native Fetch API instead of axios
-    // useFetch: true,
-    apiKey: 'API_KEY',
-
+    apiKey: process.env.OPENAI_API_KEY,
 })
 
 const createVariationResponse = await openai.images.createVariation({

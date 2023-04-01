@@ -25,10 +25,7 @@ import { Openai } from "openai-edge-streaming"
 const openai = new Openai({
     // Defining the base path is optional and defaults to https://api.openai.com/v1
     // basePath: "https://api.openai.com/v1",
-    // Use native Fetch API instead of axios
-    // useFetch: true,
-    apiKey: 'API_KEY',
-
+    apiKey: process.env.OPENAI_API_KEY,
 })
 
 const createResponse = await openai.files.create({
@@ -80,10 +77,7 @@ import { Openai } from "openai-edge-streaming"
 const openai = new Openai({
     // Defining the base path is optional and defaults to https://api.openai.com/v1
     // basePath: "https://api.openai.com/v1",
-    // Use native Fetch API instead of axios
-    // useFetch: true,
-    apiKey: 'API_KEY',
-
+    apiKey: process.env.OPENAI_API_KEY,
 })
 
 const deleteResponse = await openai.files.delete({
@@ -133,10 +127,7 @@ import { Openai } from "openai-edge-streaming"
 const openai = new Openai({
     // Defining the base path is optional and defaults to https://api.openai.com/v1
     // basePath: "https://api.openai.com/v1",
-    // Use native Fetch API instead of axios
-    // useFetch: true,
-    apiKey: 'API_KEY',
-
+    apiKey: process.env.OPENAI_API_KEY,
 })
 
 const downloadResponse = await openai.files.download({
@@ -186,10 +177,7 @@ import { Openai } from "openai-edge-streaming"
 const openai = new Openai({
     // Defining the base path is optional and defaults to https://api.openai.com/v1
     // basePath: "https://api.openai.com/v1",
-    // Use native Fetch API instead of axios
-    // useFetch: true,
-    apiKey: 'API_KEY',
-
+    apiKey: process.env.OPENAI_API_KEY,
 })
 
 const listResponse = await openai.files.list()
@@ -234,10 +222,7 @@ import { Openai } from "openai-edge-streaming"
 const openai = new Openai({
     // Defining the base path is optional and defaults to https://api.openai.com/v1
     // basePath: "https://api.openai.com/v1",
-    // Use native Fetch API instead of axios
-    // useFetch: true,
-    apiKey: 'API_KEY',
-
+    apiKey: process.env.OPENAI_API_KEY,
 })
 
 const retrieveResponse = await openai.files.retrieve({

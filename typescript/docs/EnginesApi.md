@@ -23,10 +23,7 @@ import { Openai } from "openai-edge-streaming"
 const openai = new Openai({
     // Defining the base path is optional and defaults to https://api.openai.com/v1
     // basePath: "https://api.openai.com/v1",
-    // Use native Fetch API instead of axios
-    // useFetch: true,
-    apiKey: 'API_KEY',
-
+    apiKey: process.env.OPENAI_API_KEY,
 })
 
 const createSearchResponse = await openai.engines.createSearch({
@@ -82,10 +79,7 @@ import { Openai } from "openai-edge-streaming"
 const openai = new Openai({
     // Defining the base path is optional and defaults to https://api.openai.com/v1
     // basePath: "https://api.openai.com/v1",
-    // Use native Fetch API instead of axios
-    // useFetch: true,
-    apiKey: 'API_KEY',
-
+    apiKey: process.env.OPENAI_API_KEY,
 })
 
 const listResponse = await openai.engines.list()
@@ -130,10 +124,7 @@ import { Openai } from "openai-edge-streaming"
 const openai = new Openai({
     // Defining the base path is optional and defaults to https://api.openai.com/v1
     // basePath: "https://api.openai.com/v1",
-    // Use native Fetch API instead of axios
-    // useFetch: true,
-    apiKey: 'API_KEY',
-
+    apiKey: process.env.OPENAI_API_KEY,
 })
 
 const retrieveResponse = await openai.engines.retrieve({

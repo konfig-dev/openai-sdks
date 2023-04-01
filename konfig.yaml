@@ -68,6 +68,7 @@ generators:
     includeFetchAdapter: true
     includeEventSourceParser: true
     readmeDescriptionSnippet: snippets/readmeDescription.md
+    apiDocumentationAuthenticationPartial: snippets/authenticationPartial.ts
     git:
       userId: konfig-dev
       repoId: openai-sdks/tree/main/typescript

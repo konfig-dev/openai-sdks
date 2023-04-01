@@ -25,10 +25,7 @@ import { Openai } from "openai-edge-streaming"
 const openai = new Openai({
     // Defining the base path is optional and defaults to https://api.openai.com/v1
     // basePath: "https://api.openai.com/v1",
-    // Use native Fetch API instead of axios
-    // useFetch: true,
-    apiKey: 'API_KEY',
-
+    apiKey: process.env.OPENAI_API_KEY,
 })
 
 const cancelResponse = await openai.finetunes.cancel({
@@ -78,10 +75,7 @@ import { Openai } from "openai-edge-streaming"
 const openai = new Openai({
     // Defining the base path is optional and defaults to https://api.openai.com/v1
     // basePath: "https://api.openai.com/v1",
-    // Use native Fetch API instead of axios
-    // useFetch: true,
-    apiKey: 'API_KEY',
-
+    apiKey: process.env.OPENAI_API_KEY,
 })
 
 const createResponse = await openai.finetunes.create({
@@ -137,10 +131,7 @@ import { Openai } from "openai-edge-streaming"
 const openai = new Openai({
     // Defining the base path is optional and defaults to https://api.openai.com/v1
     // basePath: "https://api.openai.com/v1",
-    // Use native Fetch API instead of axios
-    // useFetch: true,
-    apiKey: 'API_KEY',
-
+    apiKey: process.env.OPENAI_API_KEY,
 })
 
 const listResponse = await openai.finetunes.list()
@@ -185,10 +176,7 @@ import { Openai } from "openai-edge-streaming"
 const openai = new Openai({
     // Defining the base path is optional and defaults to https://api.openai.com/v1
     // basePath: "https://api.openai.com/v1",
-    // Use native Fetch API instead of axios
-    // useFetch: true,
-    apiKey: 'API_KEY',
-
+    apiKey: process.env.OPENAI_API_KEY,
 })
 
 const listEventsResponse = await openai.finetunes.listEvents({
@@ -240,10 +228,7 @@ import { Openai } from "openai-edge-streaming"
 const openai = new Openai({
     // Defining the base path is optional and defaults to https://api.openai.com/v1
     // basePath: "https://api.openai.com/v1",
-    // Use native Fetch API instead of axios
-    // useFetch: true,
-    apiKey: 'API_KEY',
-
+    apiKey: process.env.OPENAI_API_KEY,
 })
 
 const retrieveResponse = await openai.finetunes.retrieve({
