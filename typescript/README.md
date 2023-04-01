@@ -1,9 +1,8 @@
 ## openai-edge-streaming@1.0.0
 This unofficial OpenAI library provides convenient access to the [OpenAI
-API](https://platform.openai.com/docs/api-reference/) from Node.js applications.
-This library can be used in browser (not recommended as you woukd expose your
-API key), edge, and server environments. It improves upon the official library
-by:
+API](https://platform.openai.com/docs/api-reference/). This library can be used
+in browser (not recommended as you would expose your API key), edge, and server
+environments. It improves upon the official library by:
 
 1. Reorganizing OpenAI's endpoints into namespaces
 2. Adding support for usage in [Next.js Edge Runtime](https://nextjs.org/docs/api-reference/edge-runtime) by passing [`useFetch: true`](#usage-in-nextjs-edge-runtime)
@@ -44,7 +43,7 @@ export const config = {
 
 export default async function handler(req: Request): Promise<Response> {
     const openai = new Openai({
-        useFetch: true, // useFetch must be "true" for Openai to work in Next.js edge runtime
+        useFetch: true, // useFetch must be "true" for openai-edge-streaming to work in Next.js edge runtime
     })
     return new Response(JSON.stringify({ message: "This is from openai-edge-streaming" }), { status: 200 })
 }
