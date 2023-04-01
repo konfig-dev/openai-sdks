@@ -105,7 +105,7 @@ Class | Method | HTTP request | Description
 
 ## Using Next.js Edge Runtime
 
-If you are using `openai-typescript-sdk` in Next.js runtime make sure to set `useFetch: true` like so:
+If you are using `openai-typescript-sdk` in a Next.js Edge runtime make sure to set `useFetch: true` like so:
 
 ```typescript
 import { Openai } from "openai-typescript-sdk"

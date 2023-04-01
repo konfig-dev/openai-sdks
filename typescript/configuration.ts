@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import fetchAdapter from "@vespaiach/axios-fetch-adapter"
+import fetchAdapter from "konfig-axios-fetch-adapter"
 
 type ApiKey =
   | string
