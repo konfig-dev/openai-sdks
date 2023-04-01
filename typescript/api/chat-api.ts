@@ -28,6 +28,7 @@ import { requestBeforeHook } from '../requestBeforeHook';
 import fetchAdapter from 'konfig-axios-fetch-adapter';
 import { createChatCreateCompletionStream } from '../streamChatCreateCompletion';
 import { requestChatCreateCompletionStreamParameterHook } from '../streamChatCreateCompletionHook';
+import { ChatApiCustom } from './chat-api-custom';
 
 /**
  * ChatApi - axios parameter creator
@@ -103,6 +104,7 @@ export const ChatApiFp = function(configuration?: Configuration) {
         },
 
         async createCompletionStream(requestParameters: ChatApiCreateCompletionRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ReadableStreamDefaultReader<Uint8Array>>> {
+
             requestChatCreateCompletionStreamParameterHook({parameters: requestParameters})
             if (options === undefined) options = {}
             options.responseType = "stream"
@@ -152,7 +154,7 @@ export type ChatApiCreateCompletionRequest = {
  * @class ChatApi
  * @extends {BaseAPI}
  */
-export class ChatApi extends BaseAPI {
+export class ChatApi extends ChatApiCustom {
     /**
      * 
      * @summary Creates a completion for the chat message
