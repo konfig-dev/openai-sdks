@@ -62,7 +62,7 @@ fixConfig:
 generators:
   typescript:
     version: 1.0.0
-    npmName: openai-typescript-edge-streaming-sdk
+    npmName: openai-edge-streaming
     outputDirectory: typescript
     clientName: Openai
     includeFetchAdapter: true
