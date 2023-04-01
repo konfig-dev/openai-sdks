@@ -29,6 +29,7 @@ import { Engine } from '../models';
 import { ListEnginesResponse } from '../models';
 import { paginate } from "../pagination/paginate";
 import { requestBeforeHook } from '../requestBeforeHook';
+import { EnginesApiCustom } from "./engines-api-custom";
 /**
  * EnginesApi - axios parameter creator
  * @export
@@ -295,7 +296,7 @@ export type EnginesApiRetrieveRequest = {
  * @class EnginesApi
  * @extends {BaseAPI}
  */
-export class EnginesApi extends BaseAPI {
+export class EnginesApi extends EnginesApiCustom {
     /**
      * 
      * @summary The search endpoint computes similarity scores between provided query and documents. Documents can be passed directly to the API if there are no more than 200 of them.  To go beyond the 200 document limit, documents can be processed offline and then used for efficient retrieval at query time. When `file` is set, the search endpoint searches over all the documents in the given file and returns up to the `max_rerank` number of documents. These documents will be returned along with their search scores.  The similarity score is a positive score that usually ranges from 0 to 300 (but can sometimes go higher), where a score above 200 usually means the document is semantically similar to the query. 

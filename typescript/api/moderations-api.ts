@@ -25,6 +25,7 @@ import { CreateModerationRequest } from '../models';
 import { CreateModerationResponse } from '../models';
 import { paginate } from "../pagination/paginate";
 import { requestBeforeHook } from '../requestBeforeHook';
+import { ModerationsApiCustom } from "./moderations-api-custom";
 /**
  * ModerationsApi - axios parameter creator
  * @export
@@ -135,7 +136,7 @@ export type ModerationsApiCreateRequest = {
  * @class ModerationsApi
  * @extends {BaseAPI}
  */
-export class ModerationsApi extends BaseAPI {
+export class ModerationsApi extends ModerationsApiCustom {
     /**
      * 
      * @summary Classifies if text violates OpenAI\'s Content Policy

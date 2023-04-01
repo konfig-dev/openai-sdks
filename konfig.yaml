@@ -66,6 +66,7 @@ generators:
     outputDirectory: typescript
     clientName: Openai
     includeFetchAdapter: true
+    includeEventSourceParser: true
     git:
       userId: konfig-dev
       repoId: openai-sdks/tree/main/typescript

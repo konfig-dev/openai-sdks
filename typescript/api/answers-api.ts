@@ -25,6 +25,7 @@ import { CreateAnswerRequest } from '../models';
 import { CreateAnswerResponse } from '../models';
 import { paginate } from "../pagination/paginate";
 import { requestBeforeHook } from '../requestBeforeHook';
+import { AnswersApiCustom } from "./answers-api-custom";
 /**
  * AnswersApi - axios parameter creator
  * @export
@@ -138,7 +139,7 @@ export type AnswersApiCreateRequest = {
  * @class AnswersApi
  * @extends {BaseAPI}
  */
-export class AnswersApi extends BaseAPI {
+export class AnswersApi extends AnswersApiCustom {
     /**
      * 
      * @summary Answers the specified question using the provided documents and examples.  The endpoint first [searches](/docs/api-reference/searches) over provided documents or files to find relevant context. The relevant context is combined with the provided examples and question to create the prompt for [completion](/docs/api-reference/completions). 

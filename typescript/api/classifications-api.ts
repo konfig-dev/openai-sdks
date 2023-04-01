@@ -25,6 +25,7 @@ import { CreateClassificationRequest } from '../models';
 import { CreateClassificationResponse } from '../models';
 import { paginate } from "../pagination/paginate";
 import { requestBeforeHook } from '../requestBeforeHook';
+import { ClassificationsApiCustom } from "./classifications-api-custom";
 /**
  * ClassificationsApi - axios parameter creator
  * @export
@@ -138,7 +139,7 @@ export type ClassificationsApiCreateRequest = {
  * @class ClassificationsApi
  * @extends {BaseAPI}
  */
-export class ClassificationsApi extends BaseAPI {
+export class ClassificationsApi extends ClassificationsApiCustom {
     /**
      * 
      * @summary Classifies the specified `query` using provided examples.  The endpoint first [searches](/docs/api-reference/searches) over the labeled examples to select the ones most relevant for the particular query. Then, the relevant examples are combined with the query to construct a prompt to produce the final label via the [completions](/docs/api-reference/completions) endpoint.  Labeled examples can be provided via an uploaded `file`, or explicitly listed in the request using the `examples` parameter for quick tests and small scale use cases. 

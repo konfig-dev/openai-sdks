@@ -25,6 +25,7 @@ import { CreateImageRequest } from '../models';
 import { ImagesResponse } from '../models';
 import { paginate } from "../pagination/paginate";
 import { requestBeforeHook } from '../requestBeforeHook';
+import { ImagesApiCustom } from "./images-api-custom";
 /**
  * ImagesApi - axios parameter creator
  * @export
@@ -429,7 +430,7 @@ export type ImagesApiCreateVariationRequest = {
  * @class ImagesApi
  * @extends {BaseAPI}
  */
-export class ImagesApi extends BaseAPI {
+export class ImagesApi extends ImagesApiCustom {
     /**
      * 
      * @summary Creates an image given a prompt.

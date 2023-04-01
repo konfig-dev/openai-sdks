@@ -1,40 +1,21 @@
-## openai-typescript-sdk@1.1.0
+## openai-typescript-edge-streaming-sdk@1.1.0
 
-This library that utilizes [axios](https://github.com/axios/axios). The generated Node module can be used in the following environments:
+### Installing
 
-Environment
-* Node.js
-* Webpack
-* Browserify
-
-Language level
-* ES5 - you must have a Promises/A+ library installed
-* ES6
-
-Module system
-* CommonJS
-* ES6 module system
-
-### Building
-
-To build and compile the typescript sources to javascript use:
+#### npm
 ```
-npm install
-npm run build
+npm install openai-typescript-edge-streaming-sdk --save
 ```
 
-### Consuming
-
-navigate to the folder of your consuming project and run the following command.
-
+#### yarn
 ```
-npm install openai-typescript-sdk@1.1.0 --save
+yarn add openai-typescript-edge-streaming-sdk
 ```
 
 ### Getting Started
 
 ```typescript
-import { Openai } from "openai-typescript-sdk"
+import { Openai } from "openai-typescript-edge-streaming-sdk"
 
 const openai = new Openai({
     // Defining the base path is optional and defaults to https://api.openai.com/v1
@@ -105,10 +86,10 @@ Class | Method | HTTP request | Description
 
 ## Using Next.js Edge Runtime
 
-If you are using `openai-typescript-sdk` in a Next.js Edge runtime make sure to set `useFetch: true` like so:
+If you are using `openai-typescript-edge-streaming-sdk` in a Next.js Edge runtime make sure to set `useFetch: true` like so:
 
 ```typescript
-import { Openai } from "openai-typescript-sdk"
+import { Openai } from "openai-typescript-edge-streaming-sdk"
 
 export const config = {
     runtime: "edge",
@@ -118,7 +99,7 @@ export default async function handler(req: Request): Promise<Response> {
     const openai = new Openai({
         useFetch: true, // useFetch must be "true" for Openai to work in Next.js edge runtime
     })
-    return new Response(JSON.stringify({ message: "This is from openai-typescript-sdk" }), { status: 200 })
+    return new Response(JSON.stringify({ message: "This is from openai-typescript-edge-streaming-sdk" }), { status: 200 })
 }
 ```
 

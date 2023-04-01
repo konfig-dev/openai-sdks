@@ -29,6 +29,7 @@ import { ListFineTuneEventsResponse } from '../models';
 import { ListFineTunesResponse } from '../models';
 import { paginate } from "../pagination/paginate";
 import { requestBeforeHook } from '../requestBeforeHook';
+import { FinetunesApiCustom } from "./finetunes-api-custom";
 /**
  * FinetunesApi - axios parameter creator
  * @export
@@ -445,7 +446,7 @@ export type FinetunesApiRetrieveRequest = {
  * @class FinetunesApi
  * @extends {BaseAPI}
  */
-export class FinetunesApi extends BaseAPI {
+export class FinetunesApi extends FinetunesApiCustom {
     /**
      * 
      * @summary Immediately cancel a fine-tune job. 

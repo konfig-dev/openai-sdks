@@ -27,6 +27,7 @@ import { ListModelsResponse } from '../models';
 import { Model } from '../models';
 import { paginate } from "../pagination/paginate";
 import { requestBeforeHook } from '../requestBeforeHook';
+import { ModelsApiCustom } from "./models-api-custom";
 /**
  * ModelsApi - axios parameter creator
  * @export
@@ -277,7 +278,7 @@ export type ModelsApiRetrieveRequest = {
  * @class ModelsApi
  * @extends {BaseAPI}
  */
-export class ModelsApi extends BaseAPI {
+export class ModelsApi extends ModelsApiCustom {
     /**
      * 
      * @summary Delete a fine-tuned model. You must have the Owner role in your organization.

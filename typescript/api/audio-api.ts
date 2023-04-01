@@ -25,6 +25,7 @@ import { CreateTranscriptionResponse } from '../models';
 import { CreateTranslationResponse } from '../models';
 import { paginate } from "../pagination/paginate";
 import { requestBeforeHook } from '../requestBeforeHook';
+import { AudioApiCustom } from "./audio-api-custom";
 /**
  * AudioApi - axios parameter creator
  * @export
@@ -344,7 +345,7 @@ export type AudioApiCreateTranslationRequest = {
  * @class AudioApi
  * @extends {BaseAPI}
  */
-export class AudioApi extends BaseAPI {
+export class AudioApi extends AudioApiCustom {
     /**
      * 
      * @summary Transcribes audio into the input language.

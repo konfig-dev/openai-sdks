@@ -25,6 +25,7 @@ import { CreateEmbeddingRequest } from '../models';
 import { CreateEmbeddingResponse } from '../models';
 import { paginate } from "../pagination/paginate";
 import { requestBeforeHook } from '../requestBeforeHook';
+import { EmbeddingsApiCustom } from "./embeddings-api-custom";
 /**
  * EmbeddingsApi - axios parameter creator
  * @export
@@ -135,7 +136,7 @@ export type EmbeddingsApiCreateRequest = {
  * @class EmbeddingsApi
  * @extends {BaseAPI}
  */
-export class EmbeddingsApi extends BaseAPI {
+export class EmbeddingsApi extends EmbeddingsApiCustom {
     /**
      * 
      * @summary Creates an embedding vector representing the input text.

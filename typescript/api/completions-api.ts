@@ -25,6 +25,7 @@ import { CreateCompletionRequest } from '../models';
 import { CreateCompletionResponse } from '../models';
 import { paginate } from "../pagination/paginate";
 import { requestBeforeHook } from '../requestBeforeHook';
+import { CompletionsApiCustom } from "./completions-api-custom";
 /**
  * CompletionsApi - axios parameter creator
  * @export
@@ -135,7 +136,7 @@ export type CompletionsApiCreateRequest = {
  * @class CompletionsApi
  * @extends {BaseAPI}
  */
-export class CompletionsApi extends BaseAPI {
+export class CompletionsApi extends CompletionsApiCustom {
     /**
      * 
      * @summary Creates a completion for the provided prompt and parameters

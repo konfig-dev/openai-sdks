@@ -25,6 +25,7 @@ import { CreateEditRequest } from '../models';
 import { CreateEditResponse } from '../models';
 import { paginate } from "../pagination/paginate";
 import { requestBeforeHook } from '../requestBeforeHook';
+import { EditsApiCustom } from "./edits-api-custom";
 /**
  * EditsApi - axios parameter creator
  * @export
@@ -135,7 +136,7 @@ export type EditsApiCreateRequest = {
  * @class EditsApi
  * @extends {BaseAPI}
  */
-export class EditsApi extends BaseAPI {
+export class EditsApi extends EditsApiCustom {
     /**
      * 
      * @summary Creates a new edit for the provided input, instruction, and parameters.

@@ -27,6 +27,7 @@ import { ListFilesResponse } from '../models';
 import { OpenAIFile } from '../models';
 import { paginate } from "../pagination/paginate";
 import { requestBeforeHook } from '../requestBeforeHook';
+import { FilesApiCustom } from "./files-api-custom";
 /**
  * FilesApi - axios parameter creator
  * @export
@@ -456,7 +457,7 @@ export type FilesApiRetrieveRequest = {
  * @class FilesApi
  * @extends {BaseAPI}
  */
-export class FilesApi extends BaseAPI {
+export class FilesApi extends FilesApiCustom {
     /**
      * 
      * @summary Upload a file that contains document(s) to be used across various endpoints/features. Currently, the size of all the files uploaded by one organization can be up to 1 GB. Please contact us if you need to increase the storage limit. 
