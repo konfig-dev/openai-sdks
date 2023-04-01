@@ -30,8 +30,10 @@ export class ChatApiCustom extends BaseAPI {
       BASE_PATH,
       this.configuration
     );
-    const response: AxiosPromise<ReadableStreamDefaultReader<Uint8Array>> =
-      request(this.axios, this.basePath);
+    const response: AxiosPromise<ReadableStream<Uint8Array>> = request(
+      this.axios,
+      this.basePath
+    );
     return response.then((res) => {
       return {
         ...res,
@@ -47,13 +49,13 @@ const encoder = new TextEncoder();
 export function createChatCreateCompletionStream({
   response,
 }: {
-  response: AxiosResponse<ReadableStreamDefaultReader<Uint8Array>>;
+  response: AxiosResponse<ReadableStream<Uint8Array>>;
 }) {
   return new ReadableStream({
     async start(controller) {
       const parser = createParser(createOnParse({ controller }));
 
-      const reader = response.data;
+      const reader = response.data.getReader();
       let done = false;
       while (!done) {
         const { value: chunk, done: doneReading } = await reader.read();

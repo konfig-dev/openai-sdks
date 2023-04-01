@@ -1725,10 +1725,10 @@ kleur@^3.0.3:
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
   integrity sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
 
-konfig-axios-fetch-adapter@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/konfig-axios-fetch-adapter/-/konfig-axios-fetch-adapter-1.0.2.tgz#ab595c028c5e392ae8379afb96152d7d333e31b3"
-  integrity sha512-boqvzCro1Va7ygewlPXxTolrIK3pHmB4o2kmV/hh5ydl9mNHeZa/EddSVzKaat7dyVUyDzLK3brlrt4OGTIS6Q==
+konfig-axios-fetch-adapter@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/konfig-axios-fetch-adapter/-/konfig-axios-fetch-adapter-1.0.3.tgz#75b01f3e7baa087e2af875da234ddb0bb77a1654"
+  integrity sha512-OHegE/+fKiyjzklf2jBR+brrMzpzGaglyWLskTH+nKf++GpM6I0Mlorn+NVADAXcCHc0aI2uq+BYpJOlLhgY4Q==
 
 leven@^3.1.0:
   version "3.1.0"
