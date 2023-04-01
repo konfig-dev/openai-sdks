@@ -49,6 +49,8 @@ fixConfig:
         - 1332
         - 13
   update:
+    $.paths./chat/completions:
+      x-konfig-streaming: true
     $.components:
       securitySchemes:
         apiKey:

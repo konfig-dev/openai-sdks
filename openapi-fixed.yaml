@@ -303,6 +303,7 @@ paths:
               "total_tokens": 21
             }
           }
+    x-konfig-streaming: true
   /edits:
     post:
       tags:
