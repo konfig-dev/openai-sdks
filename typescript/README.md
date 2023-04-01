@@ -1,12 +1,10 @@
 ## openai-typescript-edge-streaming-sdk@1.1.0
 
 ### Installing
-
 #### npm
 ```
 npm install openai-typescript-edge-streaming-sdk --save
 ```
-
 #### yarn
 ```
 yarn add openai-typescript-edge-streaming-sdk
