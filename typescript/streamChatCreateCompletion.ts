@@ -1,6 +1,6 @@
 import { AxiosResponse } from "axios";
 import { createParser } from "eventsource-parser";
-import { createOnParse } from "./streamHook";
+import { createOnParse } from "./streamChatCreateCompletionHook";
 
 const decoder = new TextDecoder();
 

@@ -1,4 +1,4 @@
-import { EventSourceParseCallback, ParseEvent } from "eventsource-parser";
+import { EventSourceParseCallback } from "eventsource-parser";
 
 const encoder = new TextEncoder();
 

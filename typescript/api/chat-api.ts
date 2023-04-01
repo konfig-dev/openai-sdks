@@ -26,8 +26,8 @@ import { CreateChatCompletionResponse } from '../models';
 import { paginate } from "../pagination/paginate";
 import { requestBeforeHook } from '../requestBeforeHook';
 import fetchAdapter from 'konfig-axios-fetch-adapter';
-import { createStream } from '../stream';
-import { requestStreamParameterHook } from '../streamHook';
+import { createStream } from '../streamChatCreateCompletion';
+import { requestStreamParameterHook } from '../streamChatCreateCompletionHook';
 /**
  * ChatApi - axios parameter creator
  * @export
