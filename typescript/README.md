@@ -1,4 +1,4 @@
-## openai-typescript-edge-streaming-sdk@1.0.0
+## openai-edge-streaming@1.0.0
 This unofficial OpenAI library provides convenient access to the [OpenAI
 API](https://platform.openai.com/docs/api-reference/) from Node.js applications.
 This library can be used in browser (not recommended as you woukd expose your
@@ -21,22 +21,22 @@ Authored by: https://www.konfigthis.com/
 
 #### npm
 ```
-npm install openai-typescript-edge-streaming-sdk --save
+npm install openai-edge-streaming --save
 ```
 
 #### yarn
 ```
-yarn add openai-typescript-edge-streaming-sdk
+yarn add openai-edge-streaming
 ```
 
 
 
 ## Usage in Next.js Edge Runtime
 
-If you are using `openai-typescript-edge-streaming-sdk` in a Next.js Edge runtime make sure to set `useFetch: true` like so:
+If you are using `openai-edge-streaming` in a Next.js Edge runtime make sure to set `useFetch: true` like so:
 
 ```typescript
-import { Openai } from "openai-typescript-edge-streaming-sdk"
+import { Openai } from "openai-edge-streaming"
 
 export const config = {
     runtime: "edge",
@@ -46,7 +46,7 @@ export default async function handler(req: Request): Promise<Response> {
     const openai = new Openai({
         useFetch: true, // useFetch must be "true" for Openai to work in Next.js edge runtime
     })
-    return new Response(JSON.stringify({ message: "This is from openai-typescript-edge-streaming-sdk" }), { status: 200 })
+    return new Response(JSON.stringify({ message: "This is from openai-edge-streaming" }), { status: 200 })
 }
 ```
 
@@ -54,7 +54,7 @@ export default async function handler(req: Request): Promise<Response> {
 ### Getting Started
 
 ```typescript
-import { Openai } from "openai-typescript-edge-streaming-sdk"
+import { Openai } from "openai-edge-streaming"
 
 const openai = new Openai({
     // Defining the base path is optional and defaults to https://api.openai.com/v1

@@ -1,5 +1,5 @@
 {
-  "name": "openai-typescript-edge-streaming-sdk",
+  "name": "openai-edge-streaming",
   "version": "1.0.0",
   "description": "Client for OpenAI API",
   "author": "Konfig",
@@ -11,7 +11,7 @@
     "axios",
     "typescript",
     "konfig",
-    "openai-typescript-edge-streaming-sdk"
+    "openai-edge-streaming"
   ],
   "license": "Unlicense",
   "main": "./dist/index.js",

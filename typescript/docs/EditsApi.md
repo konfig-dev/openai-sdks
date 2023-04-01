@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 ```typescript
-import { Openai } from "openai-typescript-edge-streaming-sdk"
+import { Openai } from "openai-edge-streaming"
 
 const openai = new Openai({
     // Defining the base path is optional and defaults to https://api.openai.com/v1
