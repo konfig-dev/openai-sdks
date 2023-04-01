@@ -7,8 +7,8 @@ environments. It improves upon the official library by:
 2. Adds
    [streaming](https://platform.openai.com/docs/api-reference/chat/create#chat/create-stream)
    support for the `/chat/completions` endpoint with
-   [`openai.chat.createCompletionStream` method](./api/chat-api-custom.ts#L16) to help
-   implement a ChatGPT UX. See example usage
+   [`openai.chat.createCompletionStream` method](./api/chat-api-custom.ts#L16). See
+   example usage in a ChatGPT clone
    [here](https://github.com/konfig-dev/chatbot-ui/blob/main/utils/server/index.ts#L15)
 3. Reorganizing OpenAI's endpoints into namespaces
 
