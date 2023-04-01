@@ -1,4 +1,4 @@
-## openai-edge-streaming@1.0.0
+## openai-edge-streaming@1.1.0
 This unofficial OpenAI library provides convenient access to the [OpenAI
 API](https://platform.openai.com/docs/api-reference/). This library can be used
 in browser (not recommended as you would expose your API key), edge, and server

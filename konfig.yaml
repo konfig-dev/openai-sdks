@@ -61,7 +61,7 @@ fixConfig:
         - apiKey: []
 generators:
   typescript:
-    version: 1.0.0
+    version: 1.1.0
     npmName: openai-edge-streaming
     outputDirectory: typescript
     clientName: Openai
