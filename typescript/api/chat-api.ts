@@ -26,8 +26,8 @@ import { CreateChatCompletionResponse } from '../models';
 import { paginate } from "../pagination/paginate";
 import { requestBeforeHook } from '../requestBeforeHook';
 import fetchAdapter from 'konfig-axios-fetch-adapter';
-import { createStream } from '../streamChatCreateCompletion';
-import { requestStreamParameterHook } from '../streamChatCreateCompletionHook';
+import { createChatCreateCompletionStream, requestChatCreateCompletionStreamParameterHook } from '../streamChatCreateCompletion';
+
 /**
  * ChatApi - axios parameter creator
  * @export
@@ -102,7 +102,7 @@ export const ChatApiFp = function(configuration?: Configuration) {
         },
 
         async createCompletionStream(requestParameters: ChatApiCreateCompletionRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ReadableStreamDefaultReader<Uint8Array>>> {
-            requestStreamParameterHook({parameters: requestParameters})
+            requestChatCreateCompletionStreamParameterHook({parameters: requestParameters})
             if (options === undefined) options = {}
             options.responseType = "stream"
             options.adapter = fetchAdapter
@@ -167,7 +167,7 @@ export class ChatApi extends BaseAPI {
     public createCompletionStream(requestParameters: ChatApiCreateCompletionRequest, options?: AxiosRequestConfig) {
         const request = ChatApiFp(this.configuration).createCompletionStream(requestParameters, options).then((request) => request(this.axios, this.basePath));
         return request.then((response) => {
-          return { ...response, data: createStream({ response }) };
+          return { ...response, data: createChatCreateCompletionStream({ response }) };
         });
     }
 }
