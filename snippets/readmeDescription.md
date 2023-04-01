@@ -11,5 +11,6 @@ environments. It improves upon the official library by:
    example usage in a ChatGPT clone
    [here](https://github.com/konfig-dev/chatbot-ui/blob/main/utils/server/index.ts#L15)
 3. Reorganizing OpenAI's endpoints into namespaces
+4. Simplifying usage with less imports
 
 Authored by: https://www.konfigthis.com/
