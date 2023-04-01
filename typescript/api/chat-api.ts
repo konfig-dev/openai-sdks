@@ -101,8 +101,9 @@ export const ChatApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
 
-        async createCompletionStream(requestParameters: ChatApiCreateCompletionRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ReadableStream>> {
+        async createCompletionStream(requestParameters: ChatApiCreateCompletionRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ReadableStreamDefaultReader<Uint8Array>>> {
             requestStreamParameterHook({parameters: requestParameters})
+            if (options === undefined) options = {}
             options.responseType = "stream"
             options.adapter = fetchAdapter
             const localVarAxiosArgs = await localVarAxiosParamCreator.createCompletion(requestParameters, options);
@@ -129,7 +130,7 @@ export const ChatApiFactory = function (configuration?: Configuration, basePath?
             return localVarFp.createCompletion(requestParameters, options).then((request) => request(axios, basePath));
         },
 
-        createCompletionStream(requestParameters: ChatApiCreateCompletionRequest, options?: AxiosRequestConfig): AxiosPromise<ReadableStream> {
+        createCompletionStream(requestParameters: ChatApiCreateCompletionRequest, options?: AxiosRequestConfig): AxiosPromise<ReadableStreamDefaultReader<Uint8Array>> {
             return localVarFp.createCompletionStream(requestParameters, options).then((request) => request(axios, basePath));
         },
     };
@@ -165,6 +166,8 @@ export class ChatApi extends BaseAPI {
 
     public createCompletionStream(requestParameters: ChatApiCreateCompletionRequest, options?: AxiosRequestConfig) {
         const request = ChatApiFp(this.configuration).createCompletionStream(requestParameters, options).then((request) => request(this.axios, this.basePath));
-        return request.then((response) => createStream({ response }));
+        return request.then((response) => {
+          return { ...response, data: createStream({ response }) };
+        });
     }
 }
